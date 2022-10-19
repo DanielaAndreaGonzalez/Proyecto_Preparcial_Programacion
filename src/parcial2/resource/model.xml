@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="16.0.1" class="java.beans.XMLDecoder">
+ <object class="application.model.Universidad" id="Universidad0">
+  <void property="listaPrograma">
+   <void method="add">
+    <object class="application.model.Programa">
+     <void property="codigo">
+      <string>5588</string>
+     </void>
+     <void property="modalidad">
+      <string>presencial</string>
+     </void>
+     <void property="nombre">
+      <string>Economia</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="application.model.Programa">
+     <void property="codigo">
+      <string>4477</string>
+     </void>
+     <void property="modalidad">
+      <string>distancia</string>
+     </void>
+     <void property="nombre">
+      <string>sss</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="application.model.Programa" id="Programa0">
+     <void property="codigo">
+      <string>8877</string>
+     </void>
+     <void property="modalidad">
+      <string>distancia</string>
+     </void>
+     <void property="nombre">
+      <string>Carlos</string>
+     </void>
+    </object>
+   </void>
+  </void>
+  <void property="programa">
+   <object idref="Programa0"/>
+  </void>
+ </object>
+</java>
