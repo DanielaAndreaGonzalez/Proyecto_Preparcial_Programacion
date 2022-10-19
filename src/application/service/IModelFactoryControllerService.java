@@ -1,10 +1,10 @@
 /**
  * 
  */
-package parcial2.service;
+package application.service;
 
-import parcial2.model.Estudiante;
-import parcial2.model.Programa;
+import application.model.Estudiante;
+import application.model.Programa;
 
 /**
  * @author GonzalezHDanielaA

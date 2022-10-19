@@ -1,11 +1,11 @@
 /**
  * 
  */
-package parcial2.service;
+package application.service;
 
 import java.io.IOException;
 
-import parcial2.model.Estudiante;
+import application.model.Estudiante;
 
 /**
  * @author GonzalezHDanielaA

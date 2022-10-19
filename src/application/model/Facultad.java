@@ -1,11 +1,11 @@
 /**
  * 
  */
-package parcial2.model;
+package application.model;
 
 import java.io.Serializable;
 
-import parcial2.model.Programa;
+import application.model.Programa;
 
 /**
  * @author GonzalezHDanielaA

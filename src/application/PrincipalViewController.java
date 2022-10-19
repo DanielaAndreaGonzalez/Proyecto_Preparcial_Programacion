@@ -1,7 +1,7 @@
 /**
  * 
  */
-package parcial2;
+package application;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -10,13 +10,13 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
-import parcial2.Main;
-import parcial2.controller.CrudRegistroEstudiante;
-import parcial2.controller.CrudRegistroProgramaController;
-import parcial2.controller.ModelFactoryController;
-import parcial2.model.Estudiante;
-import parcial2.model.Programa;
-import parcial2.persistence.ArchivoUtil;
+import application.Main;
+import application.controller.CrudRegistroEstudiante;
+import application.controller.CrudRegistroProgramaController;
+import application.controller.ModelFactoryController;
+import application.model.Estudiante;
+import application.model.Programa;
+import application.persistence.ArchivoUtil;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;

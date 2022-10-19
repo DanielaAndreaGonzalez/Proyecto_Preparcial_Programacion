@@ -1,4 +1,4 @@
-package parcial2;
+package application;
 
 public class SampleController {
 	

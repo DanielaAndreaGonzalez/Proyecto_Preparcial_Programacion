@@ -1,4 +1,4 @@
-package parcial2;
+package application;
 	
 import java.io.IOException;
 

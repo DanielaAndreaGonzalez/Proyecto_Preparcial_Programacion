@@ -1,7 +1,7 @@
 /**
  * 
  */
-package parcial2.persistence;
+package application.persistence;
 
 import java.beans.XMLDecoder;
 import java.beans.XMLEncoder;

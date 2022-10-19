@@ -1,16 +1,16 @@
 /**
  * 
  */
-package parcial2.persistence;
+package application.persistence;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-import parcial2.model.Estudiante;
-import parcial2.model.Programa;
-import parcial2.model.Universidad;
+import application.model.Estudiante;
+import application.model.Programa;
+import application.model.Universidad;
 
 
 /**

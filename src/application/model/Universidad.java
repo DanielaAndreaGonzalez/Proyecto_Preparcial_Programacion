@@ -1,15 +1,15 @@
 /**
  * 
  */
-package parcial2.model;
+package application.model;
 
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-import parcial2.model.Programa;
-import parcial2.persistence.Persistencia;
-import parcial2.service.IUniversidadService;
+import application.model.Programa;
+import application.persistence.Persistencia;
+import application.service.IUniversidadService;
 
 /**
  * @author GonzalezHDanielaA

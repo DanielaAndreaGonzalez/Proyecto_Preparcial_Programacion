@@ -1,17 +1,17 @@
 /**
  * 
  */
-package parcial2.controller;
+package application.controller;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import parcial2.model.Estudiante;
-import parcial2.model.Programa;
-import parcial2.model.Universidad;
-import parcial2.persistence.Persistencia;
-import parcial2.service.IModelFactoryControllerService;
+import application.model.Estudiante;
+import application.model.Programa;
+import application.model.Universidad;
+import application.persistence.Persistencia;
+import application.service.IModelFactoryControllerService;
 
 /**
  * @author GonzalezHDanielaA

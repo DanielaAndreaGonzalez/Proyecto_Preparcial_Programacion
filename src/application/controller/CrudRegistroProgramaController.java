@@ -1,9 +1,9 @@
 /**
  * 
  */
-package parcial2.controller;
+package application.controller;
 
-import parcial2.model.Programa;
+import application.model.Programa;
 
 /**
  * @author GonzalezHDanielaA

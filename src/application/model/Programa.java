@@ -1,7 +1,7 @@
 /**
  * 
  */
-package parcial2.model;
+package application.model;
 
 import java.io.Serializable;
 
