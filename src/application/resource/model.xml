@@ -5,39 +5,26 @@
    <void method="add">
     <object class="application.model.Programa">
      <void property="codigo">
-      <string>5588</string>
+      <string>4453</string>
      </void>
      <void property="modalidad">
       <string>presencial</string>
      </void>
      <void property="nombre">
-      <string>Economia</string>
-     </void>
-    </object>
-   </void>
-   <void method="add">
-    <object class="application.model.Programa">
-     <void property="codigo">
-      <string>4477</string>
-     </void>
-     <void property="modalidad">
-      <string>distancia</string>
-     </void>
-     <void property="nombre">
-      <string>sss</string>
+      <string>Civil</string>
      </void>
     </object>
    </void>
    <void method="add">
     <object class="application.model.Programa" id="Programa0">
      <void property="codigo">
-      <string>8877</string>
+      <string>2213</string>
      </void>
      <void property="modalidad">
       <string>distancia</string>
      </void>
      <void property="nombre">
-      <string>Carlos</string>
+      <string>Electronica</string>
      </void>
     </object>
    </void>

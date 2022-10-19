@@ -163,6 +163,22 @@ public class Persistencia {
 		return eliminado;
 	}
 	
+	public static boolean eliminarPrograma(String codigo)
+	{
+		boolean eliminado = false;
+		ArrayList<Programa> programas = cargarInformacionPrograma();
+		for(int i=0; i<programas.size();i++)
+		{
+			if(programas.get(i).getCodigo().equalsIgnoreCase(codigo)) {
+				programas.remove(programas.get(i));
+				eliminado=true;
+				break;
+			}
+		}
+		return eliminado;		
+	}
+	
+	
 	public static ArrayList<Programa> cargarInformacionPrograma()
 	{
 		ArrayList<Programa> programas = new ArrayList<>();
@@ -221,7 +237,7 @@ public class Persistencia {
 	public static Programa actualizarPrograma(String codigo, String nombre, String modalidad)
 	{
 		ArrayList<Programa> listaProg = Persistencia.cargarInformacionPrograma();
-		Programa programa = null;
+		Programa programa = new Programa();
 		Universidad universidad = null;
 		for(int i=0; i<listaProg.size();i++)
 		{	
@@ -231,9 +247,9 @@ public class Persistencia {
 				listaProg.get(i).setNombre(nombre);
 				listaProg.get(i).setModalidad(modalidad);
 				programa = listaProg.get(i);
-				universidad.setPrograma(programa);
-				ArchivoUtil.eliminarArchivo(RUTA_ARCHIVO_MODELO_PROGRAMA_XML);
-				Persistencia.guardarRecursoProgramaXML(universidad);
+				
+				//ArchivoUtil.eliminarArchivo(RUTA_ARCHIVO_MODELO_PROGRAMA_XML);
+				//Persistencia.guardarRecursoProgramaXML(universidad);
 			}	
 		}
 		return programa;

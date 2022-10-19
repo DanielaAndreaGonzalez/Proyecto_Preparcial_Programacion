@@ -37,5 +37,10 @@ public class CrudRegistroProgramaController {
 		
 	}
 	
+	public boolean eliminarPrograma(String codigo)
+	{
+		return modelFactoryController.eliminarPrograma(codigo);
+	}
+	
 
 }

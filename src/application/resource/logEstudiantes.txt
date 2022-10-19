@@ -82,3 +82,37 @@ oct. 19, 2022 11:44:05 A. M. application.persistence.ArchivoUtil guardarRegistro
 INFO: Programar guardado,Guardar programa,2022-10-19
 oct. 19, 2022 11:46:11 A. M. application.persistence.ArchivoUtil guardarRegistroLog
 INFO: Programar guardado,Guardar programa,2022-10-19
+oct. 19, 2022 3:29:24 P. M. application.persistence.ArchivoUtil guardarRegistroLog
+INFO: Programar guardado,Guardar programa,2022-10-19
+oct. 19, 2022 3:29:48 P. M. application.persistence.ArchivoUtil guardarRegistroLog
+INFO: Programar guardado,Guardar programa,2022-10-19
+oct. 19, 2022 3:35:26 P. M. application.persistence.ArchivoUtil guardarRegistroLog
+INFO: Programar guardado,Guardar programa,2022-10-19
+oct. 19, 2022 3:35:42 P. M. application.persistence.ArchivoUtil guardarRegistroLog
+INFO: Programar guardado,Guardar programa,2022-10-19
+oct. 19, 2022 3:39:34 P. M. application.persistence.ArchivoUtil guardarRegistroLog
+INFO: Programar guardado,Guardar programa,2022-10-19
+oct. 19, 2022 3:40:01 P. M. application.persistence.ArchivoUtil guardarRegistroLog
+INFO: Programar guardado,Guardar programa,2022-10-19
+oct. 19, 2022 3:40:18 P. M. application.persistence.ArchivoUtil guardarRegistroLog
+INFO: Programar guardado,Guardar programa,2022-10-19
+oct. 19, 2022 3:41:23 P. M. application.persistence.ArchivoUtil guardarRegistroLog
+INFO: Programar guardado,Guardar programa,2022-10-19
+oct. 19, 2022 3:41:38 P. M. application.persistence.ArchivoUtil guardarRegistroLog
+INFO: Programar guardado,Guardar programa,2022-10-19
+oct. 19, 2022 3:42:46 P. M. application.persistence.ArchivoUtil guardarRegistroLog
+INFO: Programar guardado,Guardar programa,2022-10-19
+oct. 19, 2022 3:42:55 P. M. application.persistence.ArchivoUtil guardarRegistroLog
+INFO: Programar guardado,Guardar programa,2022-10-19
+oct. 19, 2022 4:00:50 P. M. application.persistence.ArchivoUtil guardarRegistroLog
+INFO: Guardado de estudiantes,nombreMariacodigo2133notas: 3.0-4.0-3.4Estudiante - GuardarEstudiante ,2022-10-19
+oct. 19, 2022 4:01:43 P. M. application.persistence.ArchivoUtil guardarRegistroLog
+INFO: Guardado de estudiantes,nombreTuliocodigo4211notas: 5.0-4.0-3.0Estudiante - GuardarEstudiante ,2022-10-19
+oct. 19, 2022 4:14:04 P. M. application.persistence.ArchivoUtil guardarRegistroLog
+INFO: Programar guardado,Guardar programa,2022-10-19
+oct. 19, 2022 4:14:07 P. M. application.persistence.ArchivoUtil guardarRegistroLog
+INFO: Programar guardado,Guardar programa,2022-10-19
+oct. 19, 2022 4:27:12 P. M. application.persistence.ArchivoUtil guardarRegistroLog
+INFO: Programar guardado,Guardar programa,2022-10-19
+oct. 19, 2022 4:27:23 P. M. application.persistence.ArchivoUtil guardarRegistroLog
+INFO: Programar guardado,Guardar programa,2022-10-19

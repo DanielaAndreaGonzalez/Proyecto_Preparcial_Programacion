@@ -10,6 +10,9 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+
+import javax.swing.JOptionPane;
+
 import application.Main;
 import application.controller.CrudRegistroEstudiante;
 import application.controller.CrudRegistroProgramaController;
@@ -33,7 +36,10 @@ public class PrincipalViewController {
 	CrudRegistroEstudiante crudRegistroEstudiante;
 	CrudRegistroProgramaController crudRegistroProgramaController;
 	ObservableList<Estudiante> listaEstudiantes = FXCollections.observableArrayList();
+	ObservableList<Programa> listaPrograma = FXCollections.observableArrayList();
+	
 	Estudiante estudiante;
+	Programa programa;
 	
 	
 	public ObservableList<Estudiante> getListaEstudiantesData()
@@ -42,6 +48,11 @@ public class PrincipalViewController {
 		return listaEstudiantes;
 	}
 	
+	public ObservableList<Programa> getListaProgramaData()
+	{
+		listaPrograma.addAll(modelFactoryController.obtenerListaPrograma());
+		return listaPrograma;
+	}
 	
 	@FXML
     private Button btnBuscarPrograma;
@@ -97,7 +108,21 @@ public class PrincipalViewController {
     @FXML
     private TableView<Estudiante> tblEstudiantes;
     
-
+    @FXML
+    private TableColumn<Programa, String> columnCodigoPrograma;
+    
+    @FXML
+    private TableColumn<Programa, String> columnNombrePrograma;
+    
+    @FXML
+    private TableColumn<Programa, String> columnModalidadPrograma;
+    
+    @FXML
+    private TableView<Programa> tblPrograma;
+    
+    @FXML
+    private Button btnEliminarPrograma;
+   
     @FXML
     private ComboBox<String> cboModalidad;
     
@@ -122,9 +147,19 @@ public class PrincipalViewController {
     	tblEstudiantes.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
     
     	estudiante = newSelection;
-    	mostrarInformacionEstudiante(newSelection);
+    	mostrarInformacionEstudiante(newSelection);	
+    	});
     	
-    });
+    	//Tabla Programa
+    	
+    	this.columnCodigoPrograma.setCellValueFactory(new PropertyValueFactory<>("codigo"));
+    	this.columnNombrePrograma.setCellValueFactory(new PropertyValueFactory<>("nombre"));
+    	this.columnModalidadPrograma.setCellValueFactory(new PropertyValueFactory<>("modalidad"));
+    	
+    	tblPrograma.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {		
+    	programa = newSelection;
+    	mostrarInformacionPrograma(newSelection);
+    	});
     	
 	}
     
@@ -158,20 +193,25 @@ public class PrincipalViewController {
     	
     	buscarPrograma();
     }
-     
     @FXML
     void actualizarProgramaAction(ActionEvent event) {
-
+    		
     	actualizarPrograma();
+    } 
+   
+    @FXML
+    void eliminarProgramaAction(ActionEvent event) {
+    	eliminarPrograma();
     }
     
+    
     public void setAplicacion(Main aplicacion) {
-    	
     	this.aplication = aplicacion;
     	tblEstudiantes.getItems().clear();
-    	tblEstudiantes.setItems(getListaEstudiantesData());
+    	tblEstudiantes.setItems(getListaEstudiantesData()); 	
     	
-    	
+    	tblPrograma.getItems().clear();
+    	tblPrograma.setItems(getListaProgramaData());
     }
     
     
@@ -182,7 +222,7 @@ public class PrincipalViewController {
     	 double nota1 = Double.parseDouble(txtNota1Est.getText());
     	 double nota2 = Double.parseDouble(txtNota2Est.getText());
     	 double nota3 = Double.parseDouble(txtNota3Est.getText());
-    	 Estudiante estudiante = null;	 
+    	 //Estudiante estudiante = null;	 
     	 estudiante = crudRegistroEstudiante.guardarEstudiante(codigo, nombre, nota1, nota2, nota3);
     	 listaEstudiantes.add(estudiante);
     }
@@ -212,8 +252,9 @@ public class PrincipalViewController {
 		
 		//Estudiante estudiante= null;
 		estudiante = crudRegistroEstudiante.actualizarEstudiante(codigo, nombre, nota1, nota2, nota3);
-    	System.out.println("Estudiante actualizado");
-    	tblEstudiantes.refresh();
+		tblEstudiantes.refresh();
+		System.out.println("Estudiante actualizado");
+    	
     }
     
     
@@ -227,8 +268,18 @@ public class PrincipalViewController {
     		txtNota2Est.setText(""+estudianteSeleccionado.getNota2());
     		txtNota3Est.setText(""+estudianteSeleccionado.getNota3());
     	}
-    	
+     }
+    
+    public void mostrarInformacionPrograma(Programa programaSeleccionado)
+    {
+    	if(programaSeleccionado != null)
+    	{
+    		txtCodigoPrograma.setText(programaSeleccionado.getCodigo());
+    		txtNombrePrograma.setText(programaSeleccionado.getNombre());
+    		cboModalidad.setValue(programaSeleccionado.getModalidad());
+    	}
     }
+    
     
     public void eliminarEstudiante()
     {
@@ -271,10 +322,22 @@ public class PrincipalViewController {
     	String nombre = txtNombrePrograma.getText();
     	String modalidad = cboModalidad.getValue().toString();
     	
-    	Programa programa = null;
+    	//Programa programa = null;
     	programa = crudRegistroProgramaController.actualizarPrograma(codigo, nombre, modalidad);
-    	System.out.println("Programa actualizado");
-    	
+    	System.out.println("Programa actualizado");	
     }
+    
+    public void eliminarPrograma()
+    {
+    	String codigo = txtCodigoPrograma.getText();
+    	boolean eliminado = crudRegistroProgramaController.eliminarPrograma(codigo);
+    	if(eliminado)
+    	{
+    		listaPrograma.remove(programa);
+    		tblPrograma.getSelectionModel().clearSelection();
+    		JOptionPane.showMessageDialog(null, "Programa eliminado");
+    	}
+    }
+    
     
 }

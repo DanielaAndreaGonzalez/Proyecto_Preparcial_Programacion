@@ -26,6 +26,7 @@ public interface IModelFactoryControllerService {
 	
 	public Programa actualizarPrograma(String codigo, String nombre, String modalidad);
 	
+	public boolean eliminarPrograma(String codigo);
 	
 	
 }

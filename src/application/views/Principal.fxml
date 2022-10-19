@@ -28,11 +28,11 @@
                         <Label layoutX="29.0" layoutY="195.0" prefHeight="17.0" prefWidth="116.0" text="Nota 2" />
                         <TextField fx:id="txtNota3Est" layoutX="484.0" layoutY="88.0" prefHeight="25.0" prefWidth="162.0" />
                         <Label layoutX="413.0" layoutY="92.0" prefHeight="17.0" prefWidth="55.0" text="Nota 3" />
-                        <Button fx:id="btnGuardarEst" layoutX="36.0" layoutY="264.0" mnemonicParsing="false" onAction="#guardarAction" text="Guardar Estudiante" />
-                        <Button fx:id="btnBuscarEst" layoutX="161.0" layoutY="264.0" mnemonicParsing="false" onAction="#buscarEstudianteAction" text="Buscar Estudiante " />
+                        <Button fx:id="btnGuardarEst" layoutX="18.0" layoutY="264.0" mnemonicParsing="false" onAction="#guardarAction" text="Guardar Estudiante" />
+                        <Button fx:id="btnBuscarEst" layoutX="145.0" layoutY="264.0" mnemonicParsing="false" onAction="#buscarEstudianteAction" text="Buscar Estudiante " />
                         <Label layoutX="286.0" layoutY="67.0" text="Estudiante" />
                         <Button fx:id="btnEliminarEst" layoutX="355.0" layoutY="264.0" mnemonicParsing="false" onAction="#eliminarEstAction" text="Eliminar Estudiante" />
-                        <Button fx:id="btnActualizarEst" layoutX="280.0" layoutY="264.0" mnemonicParsing="false" onAction="#actualizarEstAction" text="Actualizar" />
+                        <Button fx:id="btnActualizarEst" layoutX="266.0" layoutY="264.0" mnemonicParsing="false" onAction="#actualizarEstAction" text="Actualizar" />
                         <TableView fx:id="tblEstudiantes" layoutX="18.0" layoutY="301.0" prefHeight="200.0" prefWidth="454.0">
                           <columns>
                             <TableColumn fx:id="columnCodigoEstudiante" prefWidth="75.0" text="codigo" />
@@ -59,7 +59,15 @@
                         <Button fx:id="btnGuardarPrograma" layoutX="39.0" layoutY="245.0" mnemonicParsing="false" onAction="#guardarProgramaAction" prefHeight="25.0" prefWidth="89.0" text="Guardar" />
                         <ComboBox fx:id="cboModalidad" layoutX="110.0" layoutY="182.0" prefHeight="25.0" prefWidth="232.0" />
                         <Button fx:id="btnBuscarPrograma" layoutX="150.0" layoutY="245.0" mnemonicParsing="false" onAction="#buscarProgramaAction" prefHeight="25.0" prefWidth="114.0" text="Buscar" />
-                        <Button fx:id="btnActualizarPrograma" layoutX="282.0" layoutY="245.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="83.0" text="Actualizar" />
+                        <Button fx:id="btnActualizarPrograma" layoutX="282.0" layoutY="245.0" mnemonicParsing="false" onAction="#actualizarProgramaAction" prefHeight="25.0" prefWidth="83.0" text="Actualizar" />
+                        <TableView fx:id="tblPrograma" layoutX="39.0" layoutY="284.0" prefHeight="200.0" prefWidth="340.0">
+                          <columns>
+                            <TableColumn fx:id="columnCodigoPrograma" prefWidth="128.0" text="Codigo" />
+                            <TableColumn fx:id="columnNombrePrograma" prefWidth="91.0" text="Nombre" />
+                              <TableColumn fx:id="columnModalidadPrograma" prefWidth="120.0" text="Modalidad" />
+                          </columns>
+                        </TableView>
+                        <Button fx:id="btnEliminarPrograma" layoutX="379.0" layoutY="245.0" mnemonicParsing="false" onAction="#eliminarProgramaAction" prefHeight="25.0" prefWidth="79.0" text="Eliminar" />
                      </children></AnchorPane>
             </content>
           </Tab>

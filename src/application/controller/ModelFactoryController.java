@@ -41,7 +41,6 @@ public class ModelFactoryController implements IModelFactoryControllerService{
 	
 	public ModelFactoryController()
 	{
-		
 		inicializarDatos();
 	}
 	
@@ -50,9 +49,7 @@ public class ModelFactoryController implements IModelFactoryControllerService{
 	{
 		 estudiante = new Estudiante();
 		 universidad = new Universidad();
-		 cargarXML();
-		 
-		 
+		 programa = new Programa();
 		 
 	}
 	/**
@@ -106,6 +103,14 @@ public class ModelFactoryController implements IModelFactoryControllerService{
 		return lista;
 	}
 	
+	public ArrayList<Programa> obtenerListaPrograma()
+	{
+		ArrayList<Programa> lista = new ArrayList<>();
+		lista = Persistencia.cargarInformacionPrograma();
+		return lista;
+	}
+	
+	
 		
 	@Override
 	public Estudiante guardarEstudiante(String codigo, String nombre, double nota1, double nota2, double nota3) {
@@ -122,12 +127,9 @@ public class ModelFactoryController implements IModelFactoryControllerService{
 	
 	@Override
 	public Estudiante actualizarEstudiante(String codigo, String nombre, double nota1, double nota2, double nota3) {
-		
-		
 		Estudiante estudianteActualizar = null;		
 		try {
 			estudianteActualizar = Persistencia.actualizarEstudiante(codigo,nombre, nota1,nota2,nota3);
-		
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -196,9 +198,17 @@ public class ModelFactoryController implements IModelFactoryControllerService{
 
 	@Override
 	public Programa actualizarPrograma(String codigo, String nombre, String modalidad) {
-		Programa programa_actualizado = null;
-		programa_actualizado=Persistencia.actualizarPrograma(codigo, nombre, modalidad);	
-		return programa_actualizado;
+		Programa programa_actualizado = new Programa();
+		programa_actualizado=Persistencia.actualizarPrograma(codigo, nombre, modalidad);
+		universidad.setPrograma(programa_actualizado);
+		Persistencia.guardarRecursoProgramaXML(universidad);
+		return programa;
+	}
+
+	@Override
+	public boolean eliminarPrograma(String codigo) {
+		Persistencia.guardarRecursoProgramaXML(universidad);
+		return Persistencia.eliminarPrograma(codigo);
 	}
 
 	
