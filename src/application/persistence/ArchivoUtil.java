@@ -41,7 +41,7 @@ public class ArchivoUtil {
 	public static void eliminarArchivo(String ruta)
 	{
 		File archivo = new File(ruta);
-		 boolean estatus = archivo.delete();;
+		 boolean estatus = archivo.delete();
          if (!estatus) {
              System.out.println("Error no se ha podido eliminar el  archivo");
         }else{

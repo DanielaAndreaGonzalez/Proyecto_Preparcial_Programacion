@@ -3,6 +3,25 @@
  <object class="application.model.Universidad" id="Universidad0">
   <void property="listaPrograma">
    <void method="add">
+    <object class="application.model.Programa" id="Programa0">
+     <void property="codigo">
+      <string>5537</string>
+     </void>
+     <void property="modalidad">
+      <string>presencial</string>
+     </void>
+     <void property="nombre">
+      <string>Fisica</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object idref="Programa0"/>
+   </void>
+   <void method="add">
+    <object idref="Programa0"/>
+   </void>
+   <void method="add">
     <object class="application.model.Programa">
      <void property="codigo">
       <string>4432</string>
@@ -31,13 +50,26 @@
    <void method="add">
     <object class="application.model.Programa">
      <void property="codigo">
+      <string>9965</string>
+     </void>
+     <void property="modalidad">
+      <string>presencial</string>
+     </void>
+     <void property="nombre">
+      <string>Musica</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="application.model.Programa">
+     <void property="codigo">
       <string>2147</string>
      </void>
      <void property="modalidad">
       <string>presencial</string>
      </void>
      <void property="nombre">
-      <string>Matematicas</string>
+      <string>Mates</string>
      </void>
     </object>
    </void>

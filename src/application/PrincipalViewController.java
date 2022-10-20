@@ -135,8 +135,6 @@ public class PrincipalViewController {
     	crudRegistroProgramaController = new CrudRegistroProgramaController(modelFactoryController);
     	cboModalidad.getItems().addAll(ArchivoUtil.cargarProperties("modalidad").split(","));
     	
-    	
-    	
     	//Tabla Estudiantes
     	this.columnCodigoEstudiante.setCellValueFactory(new PropertyValueFactory<>("codigo"));
     	this.columnNombreEstudiante.setCellValueFactory(new PropertyValueFactory<>("nombre"));
@@ -252,6 +250,7 @@ public class PrincipalViewController {
 		
 		//Estudiante estudiante= null;
 		estudiante = crudRegistroEstudiante.actualizarEstudiante(codigo, nombre, nota1, nota2, nota3);
+		
 		tblEstudiantes.refresh();
 		System.out.println("Estudiante actualizado");
     	
@@ -298,8 +297,9 @@ public class PrincipalViewController {
     	String codigo = txtCodigoPrograma.getText();
     	String nombre = txtNombrePrograma.getText();
     	String modalidad = cboModalidad.getValue().toString();
-    	Programa programa = null;
+    	//Programa programa = null;
     	programa = crudRegistroProgramaController.guardarPrograma(codigo, nombre, modalidad);
+    	listaPrograma.add(programa);
     }
     
     

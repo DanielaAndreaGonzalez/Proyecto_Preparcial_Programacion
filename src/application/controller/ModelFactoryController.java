@@ -42,6 +42,7 @@ public class ModelFactoryController implements IModelFactoryControllerService{
 	public ModelFactoryController()
 	{
 		inicializarDatos();
+		cargarXML();
 	}
 	
 	
@@ -169,8 +170,10 @@ public class ModelFactoryController implements IModelFactoryControllerService{
 		//Programa programa = new Programa();
 		try {
 			programa = getUniversidad().guardarPrograma(codigo, nombre, modalidad);
-			universidad.setPrograma(programa);
+			//universidad.getListaPrograma().add(programa);
+			//universidad.setPrograma(programa);
 			Persistencia.guardarRecursoProgramaXML(universidad);
+			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -200,14 +203,14 @@ public class ModelFactoryController implements IModelFactoryControllerService{
 	public Programa actualizarPrograma(String codigo, String nombre, String modalidad) {
 		Programa programa_actualizado = new Programa();
 		programa_actualizado=Persistencia.actualizarPrograma(codigo, nombre, modalidad);
-		universidad.setPrograma(programa_actualizado);
-		Persistencia.guardarRecursoProgramaXML(universidad);
+		//universidad.setPrograma(programa_actualizado);
+		//Persistencia.guardarRecursoProgramaXML(universidad);
 		return programa;
 	}
 
 	@Override
 	public boolean eliminarPrograma(String codigo) {
-		Persistencia.guardarRecursoProgramaXML(universidad);
+		
 		return Persistencia.eliminarPrograma(codigo);
 	}
 

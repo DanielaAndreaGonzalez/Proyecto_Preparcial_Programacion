@@ -81,8 +81,7 @@ public class Persistencia {
 			// TODO Auto-generated catch block
 			System.out.println("hola");
 			e.printStackTrace();
-		}
-		
+		}	
 	}
 	public static void guardarEstudiantes(ArrayList<Estudiante> estudiantes) throws IOException
 	{
@@ -166,12 +165,15 @@ public class Persistencia {
 	public static boolean eliminarPrograma(String codigo)
 	{
 		boolean eliminado = false;
-		ArrayList<Programa> programas = cargarInformacionPrograma();
-		for(int i=0; i<programas.size();i++)
+		//ArrayList<Programa> programas = cargarInformacionPrograma();
+		Universidad universidad = Persistencia.cargarRecursoUniversidadXML();	
+		for(int i=0; i<universidad.getListaPrograma().size();i++)
 		{
-			if(programas.get(i).getCodigo().equalsIgnoreCase(codigo)) {
-				programas.remove(programas.get(i));
+			if(universidad.getListaPrograma().get(i).getCodigo().equalsIgnoreCase(codigo)) {
+				universidad.getListaPrograma().remove(universidad.getListaPrograma().get(i));
 				eliminado=true;
+				ArchivoUtil.eliminarArchivo(RUTA_ARCHIVO_MODELO_PROGRAMA_XML);
+				Persistencia.guardarRecursoProgramaXML(universidad);
 				break;
 			}
 		}
@@ -238,18 +240,17 @@ public class Persistencia {
 	{
 		ArrayList<Programa> listaProg = Persistencia.cargarInformacionPrograma();
 		Programa programa = new Programa();
-		Universidad universidad = null;
+		Universidad universidad = Persistencia.cargarRecursoUniversidadXML();
 		for(int i=0; i<listaProg.size();i++)
 		{	
 			if(listaProg.get(i).getCodigo().equals(codigo))
-			{
-				listaProg.get(i).setCodigo(codigo);
-				listaProg.get(i).setNombre(nombre);
-				listaProg.get(i).setModalidad(modalidad);
+			{	
+				universidad.getListaPrograma().get(i).setCodigo(codigo);
+				universidad.getListaPrograma().get(i).setNombre(nombre);
+				universidad.getListaPrograma().get(i).setModalidad(modalidad);
 				programa = listaProg.get(i);
-				
-				//ArchivoUtil.eliminarArchivo(RUTA_ARCHIVO_MODELO_PROGRAMA_XML);
-				//Persistencia.guardarRecursoProgramaXML(universidad);
+				ArchivoUtil.eliminarArchivo(RUTA_ARCHIVO_MODELO_PROGRAMA_XML);
+				Persistencia.guardarRecursoProgramaXML(universidad);
 			}	
 		}
 		return programa;
